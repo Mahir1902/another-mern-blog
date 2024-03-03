@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root{
+    --primaryBg:white;
+    --textColor:black;
+    --softBg:#f0f0f0;
+    --softTextColor:#626262;
+  }
+}
+
+.dark {
+  --bg:#0f172a;
+  --textColor: #ddd;
+  --softBg:#1f273a;
+  --softTextColor:#626262;
+
+}
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  
+}
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  /* transition: all 0.1ms ease; */
+  
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.menu {
+  position: absolute;
+  top: 6.25rem;
+  background-color: var(--primaryBg);
+  left: 0;
+  border: red 2px solid;
+  height: calc(100vh - 6.25rem);
+  width: 100%;
+  font-size: 2.25rem;
+  flex-direction: column;
+  display: flex;
+  gap: 3.125rem;
+  align-items: center;
+  justify-content: center;
+}
