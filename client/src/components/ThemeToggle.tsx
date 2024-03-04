@@ -4,15 +4,29 @@ import { IoIosSunny } from "react-icons/io";
 
 export default function ThemeToggle() {
 
+  // Initialize darkMode state based on the localStorage value
+  const [darkMode, setDarkMode] = useState(localStorage.getItem('theme') === 'dark');
 
-  const [darkMode, setDarkMode] = useState(false);
+  // This useEffect runs once on component mount to apply the initial theme
+  // useEffect(() => {
+  //   const theme = localStorage.getItem('theme');
+  //   if (theme === 'dark') {
+  //     document.documentElement.classList.add('dark');
+  //   } else {
+  //     document.documentElement.classList.remove('dark');
+  //   }
+  // }, []);
+
+  
 
   useEffect(() => {
     if(darkMode) {
       document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
     }
     else {
       document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
     }
   }, [darkMode])
 
