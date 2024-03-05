@@ -44,7 +44,7 @@ export default function Nav() {
         <RxHamburgerMenu className="h-6 w-6" />
         </button>
         {isMenuOpen && (
-          <div className="menu sm:hidden">
+          <div className="menu sm:hidden dark:bg-slate-900">
             {Links.map(link => (
               <a href={link.href} key={link.name} className="block">
                 {link.name}

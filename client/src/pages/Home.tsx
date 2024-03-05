@@ -1,16 +1,17 @@
-import React from 'react'
+
 import Featured from '../components/Featured'
 import CategoryList from '../components/CategoryList'
-import CardList from '../components/CardList'
+
 import Menu from '../components/Menu'
+import PostList from '../components/PostList'
 
 export default function Home() {
   return (
     <div>
       <Featured/>
       <CategoryList/>
-      <div>
-        <CardList/>
+      <div className='flex gap-12'>
+        <PostList/>
         <Menu/>
       </div>
       

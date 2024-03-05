@@ -11,7 +11,7 @@ export default function CategoryList() {
           <Link
             to={category.href}
             key={category.name}
-            className={` flex items-center rounded-md h-20 w-[100%] md:w-[45%] lg:w-[25%] xl:w-[15%] justify-center gap-2 text-black font-semibold`}
+            className={` flex items-center rounded-md h-20 w-[100%] md:w-[45%] lg:w-[25%] xl:w-[15%] justify-center gap-2 text-black font-semibold hover:scale-105  transition`}
             style={{ backgroundColor: category.bgColor }}
           >
             

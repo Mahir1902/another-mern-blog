@@ -45,7 +45,6 @@ a {
   top: 6.25rem;
   background-color: var(--primaryBg);
   left: 0;
-  border: red 2px solid;
   height: calc(100vh - 6.25rem);
   width: 100%;
   font-size: 2.25rem;
