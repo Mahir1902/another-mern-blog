@@ -5,7 +5,7 @@ export default function Post() {
     <div className="flex mb-12 items-center gap-12">
       {/* image container */}
       <div className="flex-1 h-[22rem] lg:block relative hidden">
-        <img src="https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?q=80&w=1596&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" className="object-cover rounded-lg"/>
+        <img src="https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?q=80&w=1596&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" className="object-fit rounded-lg"/>
       </div>
       {/* Title, desc, category, date */}
       <div className="flex-1 flex flex-col gap-6">

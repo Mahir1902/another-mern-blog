@@ -4,6 +4,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import CategoryPage from "./pages/CategoryPage";
+import SinglePost from "./pages/SinglePost";
 
 const Layout = () => {
   return (
@@ -25,6 +27,8 @@ const router = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/about", element: <About /> },
       { path: "/contact", element: <Contact /> },
+      {path: '/cat=Health', element: <CategoryPage category='health'/>},
+      {path: 'post/:title', element: <SinglePost/>}
     ],
   },
 ]);
