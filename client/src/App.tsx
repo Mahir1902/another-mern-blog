@@ -6,6 +6,9 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import CategoryPage from "./pages/CategoryPage";
 import SinglePost from "./pages/SinglePost";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Write from "./pages/Write";
 
 const Layout = () => {
   return (
@@ -27,8 +30,11 @@ const router = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/about", element: <About /> },
       { path: "/contact", element: <Contact /> },
-      {path: '/cat=Health', element: <CategoryPage category='health'/>},
-      {path: 'post/:title', element: <SinglePost/>}
+      { path: "/cat=Health", element: <CategoryPage category="health" /> },
+      { path: "post/:title", element: <SinglePost /> },
+      { path: "/login", element: <Login /> },
+      { path: "/register", element: <Register /> },
+      { path: "/write", element: <Write /> },
     ],
   },
 ]);
