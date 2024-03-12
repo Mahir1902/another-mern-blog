@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -9,6 +9,14 @@ import SinglePost from "./pages/SinglePost";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Write from "./pages/Write";
+import {
+  QueryClient,
+  QueryClientProvider
+} from 'react-query'
+
+import {Toaster} from 'react-hot-toast'
+
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const Layout = () => {
   return (
@@ -22,6 +30,8 @@ const Layout = () => {
   );
 };
 
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,16 +44,20 @@ const router = createBrowserRouter([
       { path: "post/:title", element: <SinglePost /> },
       { path: "/login", element: <Login /> },
       { path: "/register", element: <Register /> },
-      { path: "/write", element: <Write /> },
+      { path: "/write", element: <ProtectedRoute><Write /></ProtectedRoute> },
     ],
   },
 ]);
 
+
+const queryClient = new QueryClient()
+
 function App() {
   return (
-    <div>
+    <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
-    </div>
+      <Toaster />
+    </QueryClientProvider>
   );
 }
 

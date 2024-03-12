@@ -6,14 +6,17 @@ import { CiCirclePlus } from "react-icons/ci";
 import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.bubble.css'
 
+
 export default function Write() {
 
     const [open, setOpen] = useState(false)
     const [value, setValue] = useState('')
 
+
     const handleOpen = () => {
         setOpen(!open)
     }
+
 
   return (
     <div className="mt-[5rem] relative">

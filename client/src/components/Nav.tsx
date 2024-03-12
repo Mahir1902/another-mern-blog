@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  {  useState } from "react";
 import { FaSquareFacebook } from "react-icons/fa6";
 import { TiSocialInstagram } from "react-icons/ti";
 import { FaYoutube } from "react-icons/fa";
@@ -10,9 +10,12 @@ import Login from "./authLinks/Login";
 import { Links } from "../constants";
 
 
+
 export default function Nav() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  
 
   return (
     <div className="flex items-center justify-between  h-[6.25rem]">
@@ -22,7 +25,7 @@ export default function Nav() {
         <FaYoutube className="h-6 w-6" />
         <FaXTwitter className="h-6 w-6" />
       </div>
-      <div className=" flex-1 lg:text-center text-left font-bold xl:text-4xl">
+      <div className="flex-1 lg:text-center text-left font-bold xl:text-4xl">
         MyBlog
       </div>
       <div className="flex md:gap-3 lg:gap-4 xl:gap-5 flex-1 text-base items-center justify-center max-md:justify-end max-md:gap-5">
