@@ -25,5 +25,6 @@ export enum ErrorCodes {
     UNPROCESSABLE_ENTITY = 1004,
     INTERNAL_EXCEPTION = 3001,
     UNAUTHORIZED = 401,
+    NO_POSTS = 4001
 }
 

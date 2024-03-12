@@ -32,6 +32,7 @@ model Category {
   slug String @unique
   title String
   img String?
+  color String?
   Posts Post[]
 }
 
