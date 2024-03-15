@@ -1,19 +1,41 @@
 import React from "react";
 
-export default function UserInfo() {
+type Props = {
+  user: {
+    id:string,
+    username:string,
+    email:string,
+    image?:string,
+  };
+  date:string
+}
+
+export default function UserInfo({user, date}: Props) {
+
+  const dateObj = new Date(date);
+
+  const formattedDate = new Intl.DateTimeFormat('en-GB', {
+    year: '2-digit',
+    month: '2-digit',
+    day: '2-digit'
+  }).format(dateObj);
+  console.log(date)
+
   return (
     <div className="flex gap-3 items-center">
+      {user.image && (
       <div className="h-12 w-12  relative">
         <img
-          src="https://plus.unsplash.com/premium_photo-1673108852141-e8c3c22a4a22?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src={user.image}
           alt=""
           className="object-cover rounded-full w-full h-full"
         />
       </div>
+      )}
 
       <div className="text-base flex flex-col">
-        <span className="text-red-400 font-semibold">John Doe</span>
-        <span className="font-medium">11.03.24</span>
+        <span className="text-red-400 font-semibold">{user.username}</span>
+        <span className="font-medium">{formattedDate}</span>
       </div>
     </div>
   );

@@ -1,21 +1,17 @@
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Pagination from './Pagination'
 import Post from './Post'
-import axios from 'axios'
+import { PostType } from '../pages/Home'
 
 
-type Post = {
-  id: string
-  title: string,
-  desc: string,
-  catSlug: string
-
+type PostListProps = {
+  postData: PostType[]
 }
 
-export default function PostList() {
+export default function PostList({postData}: PostListProps) {
 
-  const [postData, setPostData] = useState<Post[]>([])
+  
   const [currPage, setCurrPage] = useState(1)
   const [postsPerPage, setPostsPerPage] = useState(4)
 
@@ -24,21 +20,7 @@ export default function PostList() {
   const firstPostIndex = lastPostIndex - postsPerPage
   const currentPosts = postData.slice(firstPostIndex, lastPostIndex)
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const res = await axios.get('http://localhost:3000/api/post/getPosts')
-        if(res.status === 200) {
-          setPostData(res.data)
-        }
-      } catch (error) {
-        console.log(error)
-      }
-    }
-
-    fetchPosts()
-      
-  }, [])
+  
 
   console.log(postData)
 
@@ -51,7 +33,7 @@ export default function PostList() {
         {currentPosts.map((post) => (
         <div>
           {/* individual post */}
-          <Post id={post.id} title={post.title} desc={post.desc} category={post.catSlug}/>
+          <Post id={post.id} title={post.title} desc={post.desc} category={post.catSlug} img={post.img} createdAt={post.createdAt}/>
         </div>
 
         ))}

@@ -20,7 +20,7 @@ export default function Login() {
     formState: { errors, isSubmitting },
   } = useForm<FormValues>();
 
-  const {isLoggedIn, setIsLoggedIn} = useUserStore()
+  const {isLoggedIn, setIsLoggedIn, setUsername} = useUserStore()
 
 
   const navigate = useNavigate()
@@ -50,6 +50,7 @@ export default function Login() {
     if(res.status === 200) {
       toast.success('Logged in successfully', {className: 'bg-gray-500 text-white font-medium'})
       setIsLoggedIn(true)
+      setUsername(res.data.user.username)
       navigate('/')
     }
     } catch (error: any) {

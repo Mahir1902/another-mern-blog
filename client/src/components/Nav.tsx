@@ -8,6 +8,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import ThemeToggle from "./ThemeToggle";
 import Login from "./authLinks/Login";
 import { Links } from "../constants";
+import { Link } from "react-router-dom";
 
 
 
@@ -25,9 +26,9 @@ export default function Nav() {
         <FaYoutube className="h-6 w-6" />
         <FaXTwitter className="h-6 w-6" />
       </div>
-      <div className="flex-1 lg:text-center text-left font-bold xl:text-4xl">
+      <Link to={'/'} className="flex-1 lg:text-center text-left font-bold xl:text-4xl">
         MyBlog
-      </div>
+      </Link>
       <div className="flex md:gap-3 lg:gap-4 xl:gap-5 flex-1 text-base items-center justify-center max-md:justify-end max-md:gap-5">
         <ThemeToggle />
 

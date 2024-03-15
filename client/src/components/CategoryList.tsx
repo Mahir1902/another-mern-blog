@@ -44,7 +44,7 @@ export default function CategoryList() {
       <div className="flex justify-between flex-wrap gap-5">
         {data.map((category:Category) => (
           <Link
-            to={category.href}
+            to={'/category/' + category.title.toLowerCase()}
             key={category.id}
             className={` flex items-center rounded-md h-20 w-[100%] md:w-[45%] lg:w-[25%] xl:w-[15%] justify-center gap-2 dark:text-white font-semibold hover:scale-105  transition`}
             style={{ backgroundColor: category.color }}

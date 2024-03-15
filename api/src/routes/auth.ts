@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { login, logout, register } from "../controllers/auth";
+import { checkAuth, login, logout, register } from "../controllers/auth";
 
 
 
@@ -10,5 +10,7 @@ authRoutes.post('/login', login )
 authRoutes.post('/register', register)
 
 authRoutes.post('/logout', logout)
+
+authRoutes.get('/checkAuth', checkAuth)
 
 export default authRoutes

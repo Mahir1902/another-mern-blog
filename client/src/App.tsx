@@ -17,6 +17,8 @@ import {
 import {Toaster} from 'react-hot-toast'
 
 import ProtectedRoute from "./components/ProtectedRoute";
+import { useUserStore } from "./store/userStore";
+import { useEffect } from "react";
 
 const Layout = () => {
   return (
@@ -40,8 +42,8 @@ const router = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/about", element: <About /> },
       { path: "/contact", element: <Contact /> },
-      { path: "/cat=Health", element: <CategoryPage category="health" /> },
-      { path: "post/:title", element: <SinglePost /> },
+      { path: "/category/:categoryName", element: <CategoryPage category="health" /> },
+      { path: "post/:slug", element: <SinglePost /> },
       { path: "/login", element: <Login /> },
       { path: "/register", element: <Register /> },
       { path: "/write", element: <ProtectedRoute><Write /></ProtectedRoute> },
@@ -53,6 +55,13 @@ const router = createBrowserRouter([
 const queryClient = new QueryClient()
 
 function App() {
+
+  const {checkAuth} = useUserStore()
+
+  useEffect(() => {
+      checkAuth()
+  },[checkAuth]) 
+
   return (
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />

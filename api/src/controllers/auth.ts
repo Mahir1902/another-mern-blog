@@ -2,7 +2,7 @@ import { Response, Request, NextFunction } from "express";
 
 import prisma from '../utils/prismaClient'
 import { compareSync, hashSync } from "bcryptjs";
-import * as jwt from "jsonwebtoken";
+import jwt, {JwtPayload} from "jsonwebtoken";
 import { JWT_SECRET } from "../secrets";
 import { BadRequest } from "../exceptions/bad-requests";
 import { ErrorCodes } from "../exceptions/roots";
@@ -96,6 +96,18 @@ export const register = tryCatch(async (
       res.status(StatusCodes.CREATED).json({ username: user.username });
   }) 
 
+
+  export const checkAuth = tryCatch(async (req:Request, res:Response, next:NextFunction) => {
+      const token = req.cookies.jwt
+
+      jwt.verify(token, JWT_SECRET!, {}, (err, payload) => {
+          if(err) {
+              return next(new BadRequest('Not authorized', ErrorCodes.UNAUTHORIZED))
+          }
+
+          res.status(StatusCodes.OK).json({isValid: true})
+      })
+  })
 
 
   export const logout = (req:Request, res:Response) => {
