@@ -83,11 +83,11 @@ export default function Write() {
           name=""
           id=""
           placeholder="Title"
-          className=" p-12 text-[3.5rem]  outline-none bg-primaryBg placeholder:text-[#b3b3b1] border border-white"
+          className=" p-12 text-[3.5rem]  outline-none bg-primaryBg placeholder:text-[#b3b3b1]"
           value={usePostStore.getState().title}
           onChange={(e) => setTitle(e.target.value)}
         />
-        <div className="flex flex-col relative items-center border w-full">
+        <div className="flex flex-col relative items-start w-full max-w-[12rem]">
           <button className="p-4 w-full bg-slate-800 rounded-xl flex justify-between font-semibold" onClick={() => setDropOpen(!dropOpen)}>{catSlug !== '' ? catSlug : "Category"}
           {dropOpen ? <MdKeyboardArrowUp className="w-6 h-6 text-white/30 dark:text-white/30"/> : <MdOutlineKeyboardArrowDown className="w-6 h-6 text-white/30 dark:text-white/30"/>}
           </button>
@@ -95,8 +95,8 @@ export default function Write() {
           {dropOpen && (
             <div>
               {categories.map((category, index) => (
-                <div key={index} className="my-2 hover:scale-105 hover:cursor-pointer " onClick={() => setCatSlug(category)}>
-                  <p className="">{category}</p>
+                <div key={index} className="my-2 hover:scale-105 hover:cursor-pointer flex justify-start w-full" onClick={() => setCatSlug(category)}>
+                  <p className="pl-2">{category}</p>
                 </div>
               ))}
             </div>

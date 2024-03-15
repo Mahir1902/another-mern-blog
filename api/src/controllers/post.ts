@@ -29,6 +29,9 @@ export const getPostsByCategory = tryCatch( async (req:Request, res:Response, ne
                 equals: categoryName as string,
                 mode: 'insensitive'
             }  
+        },
+        include: {
+            cat: true,
         }
     })
 
@@ -136,4 +139,24 @@ export const createPost = tryCatch( async (req:Request, res:Response, next:NextF
     })
 
     res.status(StatusCodes.CREATED).json(post)
+})
+
+
+export const getPopularPosts = tryCatch( async (req:Request, res:Response, next:NextFunction) => {
+    const popularPosts = await prisma.post.findMany({
+        orderBy: {
+            views: 'desc'
+        },
+        take: 5,
+        include: {
+            user: true,
+            cat:true
+        }
+    })
+
+    if(!popularPosts.length) {
+        return next(new BadRequest('No popular posts found', ErrorCodes.NO_POSTS ))
+    }
+
+    res.status(StatusCodes.OK).json(popularPosts)
 })

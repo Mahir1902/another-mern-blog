@@ -34,8 +34,8 @@ export default function CategoryPage({ category }: Props) {
 
   return (
     <div>
-      <div className="bg-gradient-to-r from-green-300 to-emerald-700 pb-1">
-        <h1 className="capitalize dark:bg-slate-900 bg-white py-2 px-4 text-4xl  font-bold ">
+      <div className=" pb-1">
+        <h1 className="capitalize dark:bg-slate-900 bg-white py-2 px-4 text-4xl border-b-2   font-bold ">
           {categoryName} Blogs 
         </h1>
       </div>

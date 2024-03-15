@@ -10,9 +10,10 @@ export default function Footer() {
       <div className="flex-1 flex flex-col gap-2">
         <h1 className="text-3xl">MyBlog</h1>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores
-          aliquam autem deleniti necessitatibus fugiat dolorem iste accusamus in
-          molestiae? 
+          This blog is a side project for my portfolio. It is not meant to be used by users however, feel free to create an account and post your own blogs. As this is not an actual product, the links on the footer are not functional. If you do write a blog, remember to choose a category before you publish the post. That being said, the posts here are actual posts on topics that I am interested in.
+        </p>
+        <p>
+           This project uses react for the frontend and nodejs for the backend. The database used is mongodb. It also uses firebase storage to store the images. The authentication is done using jwt tokens. 
         </p>
         <div className="flex gap-2 flex-1">
           <FaSquareFacebook className="h-4 w-4" />
