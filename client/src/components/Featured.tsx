@@ -17,7 +17,7 @@ export default function Featured() {
   useEffect(() => {
     const fetchFeaturedPost = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/api/post/getPopularPosts')
+        const res = await axios.get('http://localhost:3001/api/post/getPopularPosts')
 
         if(res.status === 200) {
           setFeaturedPost(res.data[0])
