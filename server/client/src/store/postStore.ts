@@ -42,7 +42,7 @@ const usePostStore = create<PostStore>((set, get) => ({
      // Use the get function provided by Zustand
     const { title, content, media, catSlug } = get();
 
-    return axios.post('http://localhost:3000/api/post/createPost', {
+    return axios.post('https://another-mern-blog.onrender.com/api/post/createPost', {
       title,
       desc: content,
       img: media,

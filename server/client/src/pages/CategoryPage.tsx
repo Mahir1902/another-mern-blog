@@ -13,7 +13,7 @@ export default function CategoryPage() {
   const {data, isLoading, error} = useQuery({
     queryKey: ['postsByCategory', categoryName],
     queryFn: async () => {
-      const {data} = await axios.get(`http://localhost:3000/api/post/getPostsByCategory?categoryName=${categoryName}`)
+      const {data} = await axios.get(`https://another-mern-blog.onrender.com/api/post/getPostsByCategory?categoryName=${categoryName}`)
       return data
     }
   })

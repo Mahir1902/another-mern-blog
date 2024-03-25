@@ -24,7 +24,7 @@ export default function Menu() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await axios.get('http://localhost:3001/api/post/getPopularPosts')
+        const res = await axios.get('https://another-mern-blog.onrender.com/api/post/getPopularPosts')
         if(res.status === 200) {
           setPopularPosts(res.data)
         }

@@ -20,7 +20,7 @@ export const useUserStore = create<UserStore>((set) => ({
         
         
 
-      const res = await axios.get('http://localhost:3000/api/auth/checkAuth', {withCredentials: true})
+      const res = await axios.get('https://another-mern-blog.onrender.com/api/auth/checkAuth', {withCredentials: true})
 
       // Set isLoggedIn based on the backend response
       set({ isLoggedIn: res.data.isValid });

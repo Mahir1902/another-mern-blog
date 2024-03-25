@@ -38,7 +38,7 @@ export default function Register() {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/auth/register",
+        "https://another-mern-blog.onrender.com/api/auth/register",
         { email, username, password },
         { withCredentials: true }
       );

@@ -19,7 +19,7 @@ export default function SinglePost() {
   const {data: postData, isLoading: isPostLoading} = useQuery({
     queryKey: ['singlePost', slug],
     queryFn: async () => {
-      const {data} = await axios.get(`http://localhost:3000/api/post/getPostByTitle?slug=${properSlug}`)
+      const {data} = await axios.get(`https://another-mern-blog.onrender.com/api/post/getPostByTitle?slug=${properSlug}`)
       return data
     }
   })
