@@ -45,7 +45,7 @@ export default function Login() {
     const { usernameOrEmail, password } = data;
     
     try {
-      const res = await axios.post('http://localhost:3001/api/auth/login', {usernameOrEmail, password}, {withCredentials: true})
+      const res = await axios.post('http://localhost:3000/api/auth/login', {usernameOrEmail, password}, {withCredentials: true})
 
     if(res.status === 200) {
       toast.success('Logged in successfully', {className: 'bg-gray-500 text-white font-medium'})

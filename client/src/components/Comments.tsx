@@ -27,7 +27,7 @@ export default function Comments({title}: Props) {
 
     const queryClient = useQueryClient()
 
-    const addCommentMutation = useMutation<void, unknown, CommentData>( newComment => axios.post('http://localhost:3001/api/comment/addComment', newComment, {withCredentials: true}),
+    const addCommentMutation = useMutation<void, unknown, CommentData>( newComment => axios.post(`http://localhost:3000/api/comment/addComment`, newComment, {withCredentials: true}),
     {
         onSuccess: () => {
             queryClient.invalidateQueries(['comments', title])

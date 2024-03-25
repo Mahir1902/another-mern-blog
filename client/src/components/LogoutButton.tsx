@@ -13,7 +13,7 @@ export default function LogoutButton({className}:Props) {
     const {setIsLoggedIn} = useUserStore()
 
     const handleLogout = async () => {
-        const res = await axios.post('http://localhost:3001/api/auth/logout', {}, {withCredentials: true})
+        const res = await axios.post(`http://localhost:3000/api/auth/logout`, {}, {withCredentials: true})
 
         if(res.status === 200) {
             setIsLoggedIn(false)

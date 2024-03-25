@@ -19,7 +19,7 @@ export default function CategoryList() {
     const fetchData = async () => {
 
       try {
-        const res = await axios.get('http://localhost:3001/api/category/getCategory')
+        const res = await axios.get(`http://localhost:3000/api/category/getCategory`)
 
       if(res.status !== 200) {
         throw new Error('Error fetching data')
