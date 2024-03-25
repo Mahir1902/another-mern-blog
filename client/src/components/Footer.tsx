@@ -1,4 +1,3 @@
-import React from "react";
 import { FaSquareFacebook, FaXTwitter, FaYoutube } from "react-icons/fa6";
 import { TiSocialInstagram } from "react-icons/ti";
 import { Links } from "../constants";

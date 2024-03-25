@@ -1,5 +1,4 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+
 import { useLocation, useNavigate } from "react-router-dom";
 import LogoutButton from "../LogoutButton";
 import { useUserStore } from "../../store/userStore";
@@ -10,7 +9,7 @@ type Props = {
 };
 
 export default function Login({ className }: Props) {
-  const {isLoggedIn, setIsLoggedIn} = useUserStore()
+  const {isLoggedIn} = useUserStore()
 
   const {submitPost} = usePostStore()
 

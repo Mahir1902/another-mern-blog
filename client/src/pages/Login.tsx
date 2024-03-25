@@ -1,11 +1,11 @@
-import { Link, redirect, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
 import { ImSpinner10 } from "react-icons/im";
 import axios, { AxiosError } from "axios";
 import toast from "react-hot-toast";
-import { useEffect } from "react";
+
 import { useUserStore } from "../store/userStore";
 
 type FormValues = {

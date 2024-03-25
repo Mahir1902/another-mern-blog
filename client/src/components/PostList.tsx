@@ -13,7 +13,7 @@ export default function PostList({postData}: PostListProps) {
 
   
   const [currPage, setCurrPage] = useState(1)
-  const [postsPerPage, setPostsPerPage] = useState(4)
+  const [postsPerPage] = useState(4)
 
 
   const lastPostIndex = currPage * postsPerPage

@@ -4,11 +4,9 @@ import PostList from "../components/PostList";
 import { useParams } from "react-router-dom";
 import axios, { AxiosError } from "axios";
 
-type Props = {
-  category: string;
-};
 
-export default function CategoryPage({ category }: Props) {
+
+export default function CategoryPage() {
 
   const {categoryName} = useParams()
 

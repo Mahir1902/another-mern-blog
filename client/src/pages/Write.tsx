@@ -63,7 +63,9 @@ export default function Write() {
               break;
           }
         },
-        (error) => {},
+        (error) => {
+          console.error(error);
+        },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             setMedia(downloadURL);

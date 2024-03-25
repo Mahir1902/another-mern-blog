@@ -16,7 +16,7 @@ export default function SinglePost() {
   console.log(slug)
 
   // Query to fetch a single post based on the title
-  const {data: postData, isLoading: isPostLoading, error} = useQuery({
+  const {data: postData, isLoading: isPostLoading} = useQuery({
     queryKey: ['singlePost', slug],
     queryFn: async () => {
       const {data} = await axios.get(`http://localhost:3000/api/post/getPostByTitle?slug=${properSlug}`)

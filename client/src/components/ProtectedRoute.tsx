@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useEffect } from 'react'
+import { PropsWithChildren, useEffect } from 'react'
 import { useUserStore } from '../store/userStore'
 import { useNavigate } from 'react-router-dom'
 

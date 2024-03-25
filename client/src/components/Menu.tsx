@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { EditorsPick, PopularPosts } from "../constants";
+import {PopularPosts } from "../constants";
 import PostItem from "./PostItem";
 import { useEffect, useState } from "react";
 import axios from "axios";
