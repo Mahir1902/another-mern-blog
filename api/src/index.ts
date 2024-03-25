@@ -8,7 +8,7 @@ import { errorMiddleware } from './middleware/errors'
 import cookieParser from "cookie-parser";
 import path from 'path'
 
-const __dirname = path.resolve()
+__dirname = path.resolve()
 
 const app:Express = express()
 
