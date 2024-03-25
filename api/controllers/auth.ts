@@ -1,14 +1,17 @@
 import { Response, Request, NextFunction } from "express";
 
-import prisma from '../utils/prismaClient'
-import { compareSync, hashSync } from "bcryptjs";
-import jwt, {JwtPayload} from "jsonwebtoken";
+
+// import { compareSync, hashSync } from "bcryptjs";
+// import jwt, {JwtPayload} from "jsonwebtoken";
 import { JWT_SECRET } from "../secrets";
 import { BadRequest } from "../exceptions/bad-requests";
 import { ErrorCodes } from "../exceptions/roots";
 import { loginSchema, registerSchema } from "../schema/users";
 import { tryCatch } from "../utils/tryCatch";
 import { StatusCodes } from "http-status-codes";
+import prisma from "../utils/prismaClient";
+import { compareSync, hashSync } from "bcryptjs";
+import jwt from 'jsonwebtoken'
 
 
 export const login = tryCatch(async (

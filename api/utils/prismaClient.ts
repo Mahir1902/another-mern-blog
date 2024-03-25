@@ -1,4 +1,5 @@
-import { PrismaClient } from '@prisma/client';
+// import { PrismaClient } from '@prisma/client';
+import {PrismaClient} from '@prisma/client'
 
 // Check if we are in a production environment
 const isProd = process.env.NODE_ENV === 'production';
