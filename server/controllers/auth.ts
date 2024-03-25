@@ -51,6 +51,7 @@ export const login = tryCatch(async (
   res.status(StatusCodes.OK).json({ user });
 });
 
+
 export const register = tryCatch(async (
     req: Request,
     res: Response,

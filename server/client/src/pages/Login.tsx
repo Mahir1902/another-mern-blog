@@ -45,10 +45,10 @@ export default function Login() {
     const { usernameOrEmail, password } = data;
     
     try {
-      const res = await axios.post('https://another-mern-blog.onrender.com/api/post/getPosts/api/auth/login', {usernameOrEmail, password}, {withCredentials: true})
+      const res = await axios.post('https://another-mern-blog.onrender.com/api/auth/login', {usernameOrEmail, password}, {withCredentials: true})
 
     if(res.status === 200) {
-      toast.success('Logged in successfully', {className: 'bg-gray-500 text-white font-medium'})
+      toast.success('Logged in successfully', {className: 'dark:bg-gray-500 text-white font-medium'})
       setIsLoggedIn(true)
       setUsername(res.data.user.username)
       navigate('/')
