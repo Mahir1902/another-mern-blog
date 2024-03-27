@@ -15,6 +15,7 @@ import {
 } from "firebase/storage";
 import { app } from "../utils/firebase";
 import usePostStore from "../store/postStore";
+import toast from "react-hot-toast";
 
 const storage = getStorage(app);
 
@@ -54,6 +55,7 @@ export default function Write() {
           const progress =
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
           console.log("Upload is " + progress + "% done");
+          if(progress === 100) toast.success("Uploaded successfully");
           switch (snapshot.state) {
             case "paused":
               console.log("Upload is paused");
