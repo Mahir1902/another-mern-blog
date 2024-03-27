@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { ImSpinner10 } from "react-icons/im";
 import axios, { AxiosError } from "axios";
 import toast from "react-hot-toast";
+import dotenv from 'dotenv'
+dotenv.config()
 
 import { useUserStore } from "../store/userStore";
 
@@ -45,7 +47,7 @@ export default function Login() {
     const { usernameOrEmail, password } = data;
     
     try {
-      const res = await axios.post('https://another-mern-blog.onrender.com/api/auth/login', {usernameOrEmail, password}, {withCredentials: true})
+      const res = await axios.post(`${process.env.LISTENING_PORT}/api/auth/login`, {usernameOrEmail, password}, {withCredentials: true})
 
     if(res.status === 200) {
       toast.success('Logged in successfully', {className: 'dark:bg-gray-500 text-white font-medium'})

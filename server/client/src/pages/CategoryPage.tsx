@@ -3,6 +3,8 @@ import Menu from "../components/Menu";
 import PostList from "../components/PostList";
 import { useParams } from "react-router-dom";
 import axios, { AxiosError } from "axios";
+import dotenv from 'dotenv'
+dotenv.config()
 
 
 
