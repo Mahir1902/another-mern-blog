@@ -47,7 +47,7 @@ export default function Login() {
     const { usernameOrEmail, password } = data;
     
     try {
-      const res = await axios.post(`${process.env.LISTENING_PORT}/api/auth/login`, {usernameOrEmail, password}, {withCredentials: true})
+      const res = await axios.post(`${process.env.PRODUCTION_URL}/api/auth/login`, {usernameOrEmail, password}, {withCredentials: true})
 
     if(res.status === 200) {
       toast.success('Logged in successfully', {className: 'dark:bg-gray-500 text-white font-medium'})
